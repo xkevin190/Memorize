@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34F58FA829C28B6600F650AA /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F58FA729C28B6600F650AA /* MemorizeApp.swift */; };
-		34F58FAA29C28B6600F650AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F58FA929C28B6600F650AA /* ContentView.swift */; };
+		34F58FAA29C28B6600F650AA /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F58FA929C28B6600F650AA /* EmojiMemoryGameView.swift */; };
 		34F58FAC29C28B6700F650AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F58FAB29C28B6700F650AA /* Assets.xcassets */; };
 		34F58FAF29C28B6700F650AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F58FAE29C28B6700F650AA /* Preview Assets.xcassets */; };
 		34FE7EFA29C512F200073A42 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE7EF929C512F200073A42 /* MemoryGame.swift */; };
@@ -16,9 +16,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		345E666029CC94FC00393CE8 /* Memorize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Memorize.entitlements; sourceTree = "<group>"; };
 		34F58FA429C28B6600F650AA /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F58FA729C28B6600F650AA /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
-		34F58FA929C28B6600F650AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		34F58FA929C28B6600F650AA /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		34F58FAB29C28B6700F650AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34F58FAE29C28B6700F650AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		34FE7EF929C512F200073A42 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
@@ -55,8 +56,9 @@
 		34F58FA629C28B6600F650AA /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				345E666029CC94FC00393CE8 /* Memorize.entitlements */,
 				34F58FA729C28B6600F650AA /* MemorizeApp.swift */,
-				34F58FA929C28B6600F650AA /* ContentView.swift */,
+				34F58FA929C28B6600F650AA /* EmojiMemoryGameView.swift */,
 				34F58FAB29C28B6700F650AA /* Assets.xcassets */,
 				34F58FAD29C28B6700F650AA /* Preview Content */,
 				34FE7EF929C512F200073A42 /* MemoryGame.swift */,
@@ -144,7 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34FE7EFA29C512F200073A42 /* MemoryGame.swift in Sources */,
-				34F58FAA29C28B6600F650AA /* ContentView.swift in Sources */,
+				34F58FAA29C28B6600F650AA /* EmojiMemoryGameView.swift in Sources */,
 				34F58FA829C28B6600F650AA /* MemorizeApp.swift in Sources */,
 				34FE7EFC29C51C5000073A42 /* EmojiMemoryGame.swift in Sources */,
 			);
@@ -272,10 +274,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Memorize/Memorize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Preview Content\"";
-				DEVELOPMENT_TEAM = ZC9N793UB2;
+				DEVELOPMENT_TEAM = UM6Q663W2K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -304,10 +307,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Memorize/Memorize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Preview Content\"";
-				DEVELOPMENT_TEAM = ZC9N793UB2;
+				DEVELOPMENT_TEAM = UM6Q663W2K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

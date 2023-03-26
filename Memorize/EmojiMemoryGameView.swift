@@ -7,22 +7,22 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @ObservedObject var viewModel: EmojiMemoryGame;
+struct EmojiMemoryGameView: View {
+    @ObservedObject var game: EmojiMemoryGame;
     
     var body: some View {
         VStack {
             ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))]) {
-                    ForEach(viewModel.cards) { card in
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
+                    ForEach(game.cards) { card in
                         CardView(card: card).aspectRatio(2/3, contentMode: .fit).onTapGesture {
-                            viewModel.choose(card)
+                            game.choose(card)
                         }
                     }
                 }
                 
             }
-            Spacer()
+//            Spacer()
 //            HStack {
 //                remove
 //                Spacer()
@@ -66,33 +66,47 @@ struct ContentView: View {
         
         static var previews: some View {
             let game: EmojiMemoryGame = EmojiMemoryGame();
-            ContentView(viewModel: game)
+            EmojiMemoryGameView(game: game)
                 .preferredColorScheme(.dark)
         }
     }
     
     
     struct CardView: View {
-        let card: MemoryGame<String>.Card
+        let card: EmojiMemoryGame.Card
         @State var isfaceUp: Bool = true;
         
         var body: some View {
-            let shape: RoundedRectangle = RoundedRectangle(cornerRadius: 20)
-            ZStack(alignment: .center, content: {
-                if card.isfaceUp {
-                    shape.fill().foregroundColor(.white)
-                    shape.strokeBorder(lineWidth: 3).foregroundColor(.red)
-                    Text(card.content)
-                        .font(.largeTitle)
-                        .padding(.all)
-                        
-                        
-                } else {
-                    shape.fill().foregroundColor(.red)
-                    
-                }
-                
-            })
+            GeometryReader{ geometry in
+                let shape: RoundedRectangle = RoundedRectangle(cornerRadius: DrawingContants.conerRadius)
+                ZStack(alignment: .center, content: {
+                    if(card.isMatched) {
+                        shape.opacity(0)
+                    } else {
+                        if card.isfaceUp {
+                            shape.fill().foregroundColor(.white)
+                            shape.strokeBorder(lineWidth: DrawingContants.lineWidth).foregroundColor(.red)
+                            Text(card.content)
+                                .font(font(in: geometry.size))
+                                                        
+                                
+                        } else {
+                            shape.fill().foregroundColor(.red)
+                            
+                        }
+                    }
+                })
+            }
+        }
+        
+        private func font(in size: CGSize) -> Font {
+            Font.system(size: min(size.width, size.height) * DrawingContants.fontScale )
+        }
+        
+        private struct DrawingContants {
+            static let conerRadius: CGFloat = 20
+            static let lineWidth: CGFloat = 3
+            static let fontScale: CGFloat = 0.8
         }
     }
 }
